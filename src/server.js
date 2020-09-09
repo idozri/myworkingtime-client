@@ -2,7 +2,7 @@ import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server';
-import reload from 'reload';
+// import reload from 'reload';
 import { JssProvider, SheetsRegistry } from 'react-jss';
 import { CssBaseline } from '@material-ui/core';
 import {
@@ -15,14 +15,14 @@ import theme from './theme';
 const app = express();
 
 const PORT = process.env.PORT || 3000;
-const dev = process.env.NODE_ENV === 'development';
+// const dev = process.env.NODE_ENV === 'development';
 const path = require('path');
 
 app.use(express.static('public'));
 
-if (dev) {
-    reload(app);
-}
+// if (dev) {
+//     reload(app);
+// }
 app.use((req, res) => {
     const statsFile = path.resolve('public/loadable-stats.json');
     const extractor = new ChunkExtractor({ statsFile });
@@ -84,10 +84,11 @@ app.use((req, res) => {
                 <div id='root'>${html}</div>
                 
                 ${scriptTags}
-                ${dev ? `<script src='/reload/reload.js' async></script>` : ``}
             </body>
         </html>
     `);
 });
 
 app.listen(PORT, () => console.log(`server is running on port: ${PORT}`));
+
+// ${ dev ? `<script src='/reload/reload.js' async></script>` : `` }
