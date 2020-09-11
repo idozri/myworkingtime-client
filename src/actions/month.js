@@ -57,7 +57,6 @@ export const deleteMonth = id => (dispatch, getState) => {
             handleSuccessActions(dispatch, DELETE_MONTH, id);
         })
         .catch(err => {
-            debugger;
             handleErrors(dispatch, err, DATABASE_FAIL);
         });
 };

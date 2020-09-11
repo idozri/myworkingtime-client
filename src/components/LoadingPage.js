@@ -2,19 +2,9 @@ import React, { useState } from 'react';
 import { css } from '@emotion/core';
 import PropagateLoader from 'react-spinners/PropagateLoader';
 import { makeStyles, CssBaseline } from '@material-ui/core';
+import theme from '../theme';
 
-const useStyles = makeStyles(theme => ({
-    loadingWrap: {
-        background: theme.palette.grey[900],
-        display: 'flex',
-        width: '100%',
-        height: '100vh',
-        margin: '0 auto',
-        padding: 0,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-}));
+const useStyles = makeStyles({ loadingWrap: theme.loadingWrap });
 
 // Can be a string as well. Need to ensure each key-value pair ends with ;
 const override = css`
@@ -32,7 +22,7 @@ const LoadingPage = () => {
             <PropagateLoader
                 css={override}
                 size={15}
-                color={'#009688'}
+                color={'#fafafa'}
                 loading={true}
             />
         </div>

@@ -14,7 +14,7 @@ const useStyles = makeStyles(({ authLayout, infoSpan }) => ({
 export const AuthPage = props => {
     const classes = useStyles();
 
-    const [email, setEmail] = useState('asd@example.com');
+    const [email, setEmail] = useState('test@example.com');
     const [password, setPassword] = useState('123123123');
 
     const credentials = { email, password };

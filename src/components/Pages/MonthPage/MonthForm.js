@@ -22,14 +22,12 @@ export const MonthForm = props => {
     );
 
     // Set the default value from the month picker
-    const date = moment(props.monthDate);
-    const [monthValue, setMonthValue] = useState(date);
+    const date = moment().startOf('month');
+    const [monthDate, setMonthDate] = useState(date);
 
     const onSubmit = e => {
         setLoading(true);
 
-        // Set the month date
-        const monthDate = monthValue.format('MMMM, yyyy');
         // Set the request body object
         const body = {
             monthDate,
@@ -58,8 +56,8 @@ export const MonthForm = props => {
                         label="Year and Month"
                         minDate={moment().subtract(5, 'years')}
                         maxDate={moment()}
-                        value={monthValue}
-                        onChange={setMonthValue}
+                        value={monthDate}
+                        onChange={setMonthDate}
                     />
                 </MuiPickersUtilsProvider>
                 <TextField

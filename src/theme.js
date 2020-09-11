@@ -129,6 +129,16 @@ export default createMuiTheme({
         fontSize: `${fontSizeXS} !important`,
         margin: '0.8rem 1.2rem 2rem 1.2rem !important'
     },
+    loadingWrap: {
+        background: myColors.primary.main,
+        display: 'flex',
+        width: '100%',
+        height: '100vh',
+        margin: '0 auto',
+        padding: 0,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
     pageHeader: {
         background: myColors.primary.main,
         minHeight: '200px',

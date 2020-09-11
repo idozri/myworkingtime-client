@@ -33,7 +33,6 @@ const useStyles = makeStyles(({ authLayout, infoSpan }) => ({
 }));
 
 const WorkdayFormDialog = props => {
-    // debugger;
     const classes = useStyles();
     const [workday, setWorkday] = useState(props.workday);
 
@@ -69,7 +68,7 @@ const WorkdayFormDialog = props => {
         setLoading(true);
 
         const updates = {
-            date: date.startOf('day'),
+            date,
             timeIn: timeIn,
             timeOut: timeOut,
             note,

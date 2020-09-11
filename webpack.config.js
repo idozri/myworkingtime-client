@@ -10,8 +10,8 @@ if (process.env.NODE_ENV === 'development') {
 const common = {
     devtool:
         process.env.NODE_ENV === 'production'
-            ? 'source-map'
-            : 'inline-source-map',
+            ? 'inline-source-map'
+            : 'source-map',
     module: {
         rules: [
             {

@@ -37,6 +37,7 @@ export const addWorkday = (workdayData = {}) => (dispatch, getState) => {
         .post(`${api}/workdays`, body, axiosConfig(token))
         .then(res => {
             handleSuccessActions(dispatch, ADD_WORKDAY, res.data);
+            debugger;
             return res;
         })
         .catch(err => {
@@ -75,28 +76,3 @@ export const deleteWorkday = id => (dispatch, getState) => {
         })
         .catch(err => handleErrors(dispatch, err));
 };
-
-// // Dispatch the error to state
-// const handleErrors = (dispatch, err, id = null) => {
-//     debugger;
-//     const msg = err.response ? err.response.data.msg : err;
-//     const status = err.response ? err.response.status : '500';
-
-//     // dispatch the error to state
-//     dispatch(returnErrors(msg, status, id));
-
-//     if (id) {
-//         // Dispatch the action to clear state
-//         dispatch({ type: id });
-//     }
-// };
-
-// const dispatchAction = (dispatch, type, data) => {
-//     // Clear Errors from state
-//     dispatch(clearErrors());
-//     // Dispatch data to state
-//     dispatch({
-//         type,
-//         payload: data
-//     });
-// };
