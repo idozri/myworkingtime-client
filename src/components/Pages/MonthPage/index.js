@@ -64,7 +64,7 @@ export const MonthPage = props => {
             <Container className="content-container__page-top">
                 <Paper className="page-top__paper" elevation={12}>
                     <TextField
-                        label="SEARCH"
+                        label="SEARCH MONTH"
                         onChange={e => handleSearchOnChange(e.target.value)}
                     />
                     <TableSortLabel
@@ -73,7 +73,7 @@ export const MonthPage = props => {
                         className="paper__sort-label"
                         onClick={() => handleSortByChange()}
                     >
-                        DATE
+                        SORT DATE
                         <span className={classes.visuallyHidden}>
                             {props.sortBy
                                 ? 'sorted ascending'

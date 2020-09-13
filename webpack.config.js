@@ -49,6 +49,9 @@ module.exports = [
         ...common,
         output: {
             path: `${__dirname}/public`
+        },
+        optimization: {
+            minimize: true
         }
     },
     {

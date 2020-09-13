@@ -31,14 +31,12 @@ app.use((req, res) => {
 
     const generateClassName = createGenerateClassName();
 
-    const sheetsManager = new Map();
-
     const jsx = extractor.collectChunks(
         <JssProvider
             registry={sheetsRegistry}
             generateClassName={generateClassName}
         >
-            <MuiThemeProvider theme={theme} sheetsManager={sheetsManager}>
+            <MuiThemeProvider theme={theme}>
                 <CssBaseline />
                 <ChunkExtractorManager extractor={extractor}>
                     <AppRouter />

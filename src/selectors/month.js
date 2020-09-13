@@ -23,7 +23,14 @@ export const selectVisibleMonth = createDeepEqualSelector(
 
 export const selectVisibleMonthDate = createDeepEqualSelector(
     [visibleMonthIdInputSelector, monthsInputSelecor],
-    (monthId, months) => monthId && months[monthId].monthDate
+    (monthId, months) => {
+        try {
+            return monthId && months[monthId].monthDate;
+        } catch (e) {
+            typeof window !== 'undefined' &&
+                localStorage.removeItem('activeMonthId');
+        }
+    }
 );
 
 export const selectMonthById = monthId =>
